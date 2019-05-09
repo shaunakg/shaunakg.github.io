@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<style>
+
+* {
+	font-family: Arial, Helvetica, sans-serif
+}
+
+</style>
+
+<h1 id="orient-display"></h1>
+
+<script>
+
+// var orientation = screen.msOrientation || screen.mozOrientation || (screen.orientation || {}).type;
+
+// if (orientation === "landscape-primary") {
+// 	console.log("That looks good.");
+// } else if (orientation === "landscape-secondary") {
+// 	console.log("Mmmh... the screen is upside down!");
+// } else if (orientation === "portrait-secondary" || orientation === "portrait-primary") {
+// 	console.log("Mmmh... you should rotate your device to landscape");
+// } else if (orientation === undefined) {
+// 	console.log("The orientation API isn't supported in this browser :(");
+// }
+
+window.addEventListener("orientationchange", function() {
+  document.getElementById("orient-display").innerHTML = "the orientation of the device is now " + screen.orientation.angle;
+});
+
+
+</script>
