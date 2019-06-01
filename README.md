@@ -1,5 +1,7 @@
 ## Welcome to GitHub Pages
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6136ce32-642c-4daf-b78e-4223f43a3399/deploy-status)](https://app.netlify.com/sites/shaunakg-default-01/deploys)
+
 You can use the [editor on GitHub](https://github.com/jacksonsevendelta/jacksonsevendelta.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
