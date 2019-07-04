@@ -8,3 +8,8 @@ font-family: 'DM Serif Text', serif;
 font-family: 'Raleway', sans-serif;
 
 */
+
+/* Base element styling */
+h1 {
+    font-family: 'DM Serif Display', serif;
+}
