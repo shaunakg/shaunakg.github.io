@@ -13,3 +13,41 @@ font-family: 'Raleway', sans-serif;
 .serif-title {
     font-family: 'DM Serif Display', serif;
 }
+
+/* Class styling */
+
+/* The showcase gallery class (flexbox container) */
+.gallery-flexbox {
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+/* The showcase gallery item (flexbox item) */
+.gallery-slide {
+    text-align: center;
+    background: lightblue;
+    border-radius: 10px;
+    font-family: 'Raleway', sans-serif;
+    box-shadow: 0 0 50px gray;
+
+    padding: 2em;
+    max-width: 20%;
+
+    transition: 2s;
+}
+
+.gallery-slide:hover {
+    box-shadow: none;
+    border-radius: none;
+    background: inherit;
+
+    transition: 2s;
+}
+
+/* Other resources for the showcase gallery */
+.slide-img {
+    max-height: 30%;
+    max-width: 90%;
+}
