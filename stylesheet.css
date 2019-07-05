@@ -32,10 +32,12 @@ font-family: 'Raleway', sans-serif;
     font-family: 'Raleway', sans-serif;
     box-shadow: 0 0 50px gray;
 
+    border: 20px solid gray;
+
     padding: 2em;
     max-width: 20%;
 
-    transition: 2s;
+    transition: 0.5s;
 }
 
 .gallery-slide:hover {
@@ -43,11 +45,13 @@ font-family: 'Raleway', sans-serif;
     border-radius: none;
     background: inherit;
 
-    transition: 2s;
+    border-color: white;
+
+    transition: 0.5s;
 }
 
 /* Other resources for the showcase gallery */
 .slide-img {
     max-height: 30%;
-    max-width: 90%;
+    max-width: 80%;
 }
