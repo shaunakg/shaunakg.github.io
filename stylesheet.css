@@ -23,6 +23,7 @@ h1 {
 
 body {
     font-family: 'Open Sans', serif;
+    font-size: calc(1em - 40px);
 }
 
 /* Class styling */
@@ -49,7 +50,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 50px gray;
 
-    border: 20px solid #4D4250;
+    border: 1em solid #4D4250;
 
     padding: 2em;
     max-width: 20%;
