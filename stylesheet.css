@@ -6,12 +6,23 @@ font-family: 'DM Serif Display', serif;
 font-family: 'Open Sans', sans-serif;
 font-family: 'DM Serif Text', serif;
 font-family: 'Raleway', sans-serif;
+font-family: 'Rubik Mono One', sans-serif;
 
 */
 
 /* Base element styling */
-.serif-title {
-    font-family: 'DM Serif Display', serif;
+body {
+    margin-top: 20px;
+    background-color: #E8D5B7;
+}
+
+h1 {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 40px;
+}
+
+body {
+    font-family: 'Open Sans', serif;
 }
 
 /* Class styling */
@@ -22,17 +33,23 @@ font-family: 'Raleway', sans-serif;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
+    flex-wrap: wrap;
+    margin:-10px;
+}
+
+.gallery-flexbox>* {
+    flex: 1 1 160px;
+    margin: 10px;
 }
 
 /* The showcase gallery item (flexbox item) */
 .gallery-slide {
     text-align: center;
-    background: lightblue;
+    background-color: #E6A972;
     border-radius: 10px;
-    font-family: 'Raleway', sans-serif;
     box-shadow: 0 0 50px gray;
 
-    border: 20px solid gray;
+    border: 20px solid #4D4250;
 
     padding: 2em;
     max-width: 20%;
@@ -41,17 +58,25 @@ font-family: 'Raleway', sans-serif;
 }
 
 .gallery-slide:hover {
-    box-shadow: none;
-    border-radius: none;
-    background: inherit;
-
-    border-color: white;
-
+    background-color: #F6D169;
     transition: 0.5s;
 }
 
 /* Other resources for the showcase gallery */
-.slide-img {
-    max-height: 30%;
-    max-width: 80%;
+.slide-img-sq {
+    max-width: 50%;
+}
+
+.title-desc {
+    color: rgb(255, 0, 0);
+}
+
+.title-link {
+    text-decoration: none;
+    color: rgb(28, 0, 184);
+}
+
+.title-link:hover {
+    cursor: pointer;
+    color: rgb(134, 59, 214);
 }
