@@ -7,7 +7,11 @@
 	<link href="https://fonts.googleapis.com/css?family=DM+Serif+Display|DM+Serif+Text|Open+Sans|Raleway|Rubik+Mono+One&display=swap" rel="stylesheet"> 
 	<!-- Other -->
 	<title>Shaunak G</title>
+
 </head>
+
+<div id="gh-pages-bar" class="top-infobar"><a href="https://github.com/shaunakg/shaunakg.github.io"><img src="https://img.shields.io/badge/hosted%20on-GitHub%20Pages-green.svg"></a> <span id="top-infobar-exit" class="infobar-exit">X</span></div>
+<div id="localhosted-bar" class="top-infobar">This website is being hosted locally - on your computer. <span id="localhostedbar-exit" class="infobar-exit">X</span></div>
 
 <div class="gallery-flexbox">
 	
@@ -49,3 +53,30 @@
 	</div>
 
 </div>
+
+<script>
+
+const infobarExit = document.getElementById("top-infobar-exit");
+const infobar = document.getElementById("gh-pages-bar");
+const localhostedBar = document.getElementById("localhosted-bar");
+const localhostedbarExit = document.getElementById("localhostedbar-exit");
+
+if (location.hostname == "localhost" || location.hostname == "127.0.0.1" || location.hostname == "") {
+	console.log("Hosted locally - hello developer :)");
+    localhostedBar.style.display = "inline-block";
+	infobar.style.display = "none";
+} else {
+	console.log("Hosted online - hello developer :)");
+	localhostedBar.style.display = "none";
+	infobar.style.display = "inline-block";
+}
+
+infobarExit.onclick = function () {
+	infobar.style.top = "-51px";
+}
+
+localhostedbarExit.onclick = function () {
+	localhostedBar.style.top = "-51px";
+}
+
+</script>
