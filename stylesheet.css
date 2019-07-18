@@ -15,16 +15,39 @@ body {
     margin-top: 20px;
     background-color: #E8D5B7;
     overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
 }
 
-h1 {
-    font-family: 'Rubik Mono One', sans-serif;
-    font-size: 40px;
+@media (pointer:fine) {
+    h1 {
+        font-family: 'Rubik Mono One', sans-serif;
+        font-size: 40px;
+    }
+
+    .gallery-flexbox>* {
+        flex: 1 1 160px;
+        margin: 10px;
+    }
 }
 
-body {
-    font-family: 'Open Sans', serif;
-    font-size: calc(1em - 20px);
+@media (pointer:coarse) {
+    h1 {
+        font-family: 'Rubik Mono One', sans-serif;
+        font-size: 20px;
+    }
+
+    body {
+        margin-top: 5px;
+    }
+
+    .gallery-flexbox>* {
+        flex: 1 1 160px;
+        margin: 5px;
+    }
+
+    .top-infobar {
+        display: none !important;
+    }
 }
 
 /* Class styling */
@@ -62,17 +85,12 @@ body {
     margin:-10px;
 }
 
-.gallery-flexbox>* {
-    flex: 1 1 160px;
-    margin: 10px;
-}
-
 /* The showcase gallery item (flexbox item) */
 .gallery-slide {
     text-align: center;
     background-color: #E6A972;
     border-radius: 10px;
-    box-shadow: 0 0 50px gray;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.514);
 
     border: 1em solid #4D4250;
 
@@ -99,9 +117,16 @@ body {
 .title-link {
     text-decoration: none;
     color: rgb(28, 0, 184);
+    transition: 0.5s;
 }
 
 .title-link:hover {
     cursor: pointer;
     color: rgb(134, 59, 214);
+    transition: 0.5s;
+}
+
+.puzzsec {
+    cursor:default;
+    transition:1s;
 }
