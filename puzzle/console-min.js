@@ -1,0 +1,1 @@
+var i,ctext="T25l\nU2l4\nT25l\nRWlnaHQ=\nWmVybw==\nVGhyZWU=\nTmluZQ==\nRWlnaHQ=\nU2V2ZW4=\nRml2ZQ==\n";for(i=0;i<ctext.split("\n").length;i++)console.log(ctext.split("\n")[i]);
