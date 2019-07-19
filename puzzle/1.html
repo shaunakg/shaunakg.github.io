@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="console-min.js"></script>
+
+    <!-- MD5 from myersdaily -->
+    <script src="../scripts/md5.js"></script>
+</head>
+
+<h1 id="page_title">It awaits.</h1>
+<span id="console_pre">> <input autocomplete="off" id="consoleinput" type="text" class="console" oninput="check_passphrase(pw_input, p_title, pw_wrapper, ready_input);"></span><br>
+<input type="text" oninput="check_ready(ready_input, 'oninput');" onchange="check_ready(ready_input, 'onchange');" id="ready_input">
+
+<script>
+    const pw_input = document.getElementById("consoleinput");
+    const p_title = document.getElementById("page_title");
+    const pw_wrapper = document.getElementById("console_pre");
+    const ready_input = document.getElementById("ready_input");
+
+    pw_input.focus();
+</script>

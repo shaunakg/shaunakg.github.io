@@ -17,10 +17,35 @@ input[type=text].console {
     width: calc(100% - 50px);
 }
 
-#console-pre {
+#console_pre {
     border: none;
     background: none;
     font-family: 'Courier New', Courier, monospace;
     font-size: 40px;    
     font-weight: 700;
+    transition: 0.5s;
+}
+
+.solved-title {
+    height: 100%;
+    line-height: calc(100%);
+    text-align: center;
+    color: red;
+    transition: 1s;
+    font-size: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#ready_input {
+    color: transparent;
+    text-shadow: none;
+    opacity: 0;
+}
+
+#ready_input:focus {
+    outline: none;
+}
+
+.readys {
+    transition: 1s;
 }
