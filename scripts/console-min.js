@@ -62,14 +62,14 @@ function check_ready(ready_input, action) {
             ready3.style.fontFamily = "monospace";
 
         } else {
-            
+
             ready1.style.color = "red";
             ready1.style.backgroundColor = "inherit";
-            ready3.style.fontFamily = "inherit";
+            ready1.style.fontFamily = "inherit";
 
             ready2.style.color = "red";
             ready2.style.backgroundColor = "inherit";
-            ready3.style.fontFamily = "inherit";
+            ready2.style.fontFamily = "inherit";
 
             ready3.style.color = "red";
             ready3.style.backgroundColor = "inherit";
