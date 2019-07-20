@@ -2,6 +2,8 @@
 body {
     margin-left: 20px;
     background-image: url("../images/other/bg.png");
+    background-color: #E8D5B7;
+    transition: 3s;
 }
 
 h1 {
