@@ -3,7 +3,7 @@ var i,ctext="T25l\nU2l4\nT25l\nRWlnaHQ=\nWmVybw==\nVGhyZWU=\nVGhyZWU= \nTmluZQ==
 function check_passphrase(pw_input, p_title, pw_wrapper, p_ready) {
     console.log("checked");
     if (md5(pw_input.value.toLowerCase()) == "c773fdef3889bdadbe809f1e8aaeea46") {
-        p_title.innerHTML = "<span class=\"readys\" id=\"ready1\">[re</span><span class=\"readys\" id=\"ready2\">ad</span><span class=\"readys\" id=\"ready3\">y?]</span>";
+        p_title.innerHTML = "<span class=\"readys\" id=\"ready1\">[re</span><span class=\"readys\" id=\"ready2\">ad</span><span class=\"readys\" id=\"ready3\">y?]</span><br><p>Type your answer</p>";
         p_title.classList = ["solved-title"];
         pw_wrapper.style.display = "none";
         p_ready.focus();
@@ -21,27 +21,60 @@ function check_ready(ready_input, action) {
         var ready3 = document.getElementById("ready3");
         
         if (ready_input.value.toLowerCase() == "y") {
-            ready1.style.color = "black";
-            ready1.style.backgroundColor = "green";
+            ready1.style.color = "yellow";
+            ready1.style.backgroundColor = "black";
+            ready1.style.fontFamily = "monospace";
+
             ready2.style.color = "red";
             ready2.style.backgroundColor = "inherit";
+            ready3.style.fontFamily = "inherit";
+
             ready3.style.color = "red";
             ready3.style.backgroundColor = "inherit";
+            ready3.style.fontFamily = "inherit";
+
         } else if (ready_input.value.toLowerCase() == "ye") {
-            ready2.style.color = "black";
-            ready2.style.backgroundColor = "green";
+
+            ready1.style.color = "yellow";
+            ready1.style.backgroundColor = "black";
+            ready1.style.fontFamily = "monospace";
+
+            ready2.style.color = "yellow";
+            ready2.style.backgroundColor = "black";
+            ready2.style.fontFamily = "monospace";
+
             ready3.style.color = "red";
             ready3.style.backgroundColor = "inherit";
+            ready3.style.fontFamily = "inherit";
+
         } else if (ready_input.value.toLowerCase() == "yes") {
-            ready3.style.color = "black";
-            ready3.style.backgroundColor = "green";
+
+            ready1.style.color = "yellow";
+            ready1.style.backgroundColor = "black";
+            ready1.style.fontFamily = "monospace";
+
+            ready2.style.color = "yellow";
+            ready2.style.backgroundColor = "black";
+            ready2.style.fontFamily = "monospace";
+
+            ready3.style.color = "yellow";
+            ready3.style.backgroundColor = "black";
+            ready3.style.fontFamily = "monospace";
+
         } else {
+            
             ready1.style.color = "red";
             ready1.style.backgroundColor = "inherit";
+            ready3.style.fontFamily = "inherit";
+
             ready2.style.color = "red";
             ready2.style.backgroundColor = "inherit";
+            ready3.style.fontFamily = "inherit";
+
             ready3.style.color = "red";
             ready3.style.backgroundColor = "inherit";
+            ready3.style.fontFamily = "inherit";
+
         }
 
     } else if (action == "onchange") {

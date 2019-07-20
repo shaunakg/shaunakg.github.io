@@ -15,35 +15,7 @@
     <pre><div id="output"></div></pre><br>
     <span id="currentcommandtext">root@pulsarconsole:~$ <input type="text" class="console-input" id="consoleinput01" onchange="process();" autofocus></span>
 
-    <span id="shutdown_log" class="typewriter" style="display:none;">
-        
-    PULSAR OS SHUTDOWN LOG<br>
-    <br>
-    Shutdown time: [ERROR_CLOCK_NOT_INITIATED]<br>
-    Reason: User command<br>
-    <br>
-    Logging out user: SYS_TEMP_USR_L3NvbHZlZC5odG1s<br>
-    <br>
-    Halting all non-essential programs<br>
-    Halting all non-essential services<br>
-    Halting ~/system/bin/config/hlt.sh<br>
-    Unmounting ~/mnt/drive/c/records/2019/<br>
-    <br>
-    Halting drivers<br>
-    Halting coreutils<br>
-    Halting sysutils<br>
-    <br>
-    Running final drive scan...<br>
-    [15% done] : secure<br>
-    [35% done] : secure<br>
-    [55% done] : secure<br>
-    [85% done] : found corrupted sectors 0x1342b3 to 0x3234cf<br>
-    [100% done] : finished<br>
-    <br>
-    Shutdown complete at [ERROR_CLOCK_NOT_INITIATED];<br>
-    <br>
-
-    </span>
+    <span id="shutdown_log" class="typewriter" style="display:none;"><span class="no-select">PULSAR OS SHUTDOWN LOG<br><br>Shutdown time: [ERROR_CLOCK_NOT_INITIATED]<br>Reason: User command<br><br>Logging out user: SYS_TEMP_USR_</span>L3NvbHZlZC5odG1s<span class="no-select"><br><br>Halting all non-essential programs<br>Halting all non-essential services<br>Halting ~/system/bin/config/hlt.sh<br>Unmounting ~/mnt/drive/c/records/2019/<br><br>Halting drivers<br>Halting coreutils<br>Halting sysutils<br><br>Running final drive scan...<br>[15% done] : secure<br>[35% done] : secure<br>[55% done] : secure<br>[85% done] : found corrupted sectors 0x1342b3 to 0x3234cf<br>[100% done] : finished<br><br>Shutdown complete at [ERROR_CLOCK_NOT_INITIATED];</span><br><br></span>
 </p>
 
 <script>
@@ -59,13 +31,26 @@ const shutelement = document.getElementById("shutdown_log");
 
 var i = 0;
 
-function output_generator(result) {
-    return "<br>" + commandtext.innerText + console_input.value + "<br>" + result + "<br>";
+function output_generator(result, show_input_value = true) {
+    if (show_input_value) {
+        return "<br>" + commandtext.innerText + console_input.value + "<br>" + result + "<br>";
+    } else {
+
+        var val_replace = "";
+        for (var i = 0; i < console_input.value.length; i++) {
+            val_replace += "*"
+        }
+
+        return "<br>" + commandtext.innerText + val_replace + "<br>" + result + "<br>";
+    }
 }
 
 function process() {
 
-    if (console_input.value.toLowerCase().includes("help")) {
+    if (console_input.value.toLowerCase().includes("<") || console_input.value.toLowerCase().includes(">")) {
+        out.innerHTML += output_generator("Invalid characters", false);
+        console_input.value = "";
+    } else if (console_input.value.toLowerCase().includes("help")) {
         out.innerHTML += output_generator(helptext);
         console_input.value = "";
     } else if (console_input.value.toLowerCase().includes("ssh")) {
@@ -74,7 +59,7 @@ function process() {
     } else if (console_input.value.toLowerCase().includes("what is this")) {
         out.innerHTML += output_generator("<s>I often wonder myself</s> Incorrect command.");
         console_input.value = "";
-    } else if (console_input.value.toLowerCase().includes("cls")) {
+    } else if (console_input.value.toLowerCase().includes("cls") || console_input.value.toLowerCase().includes("clear")) {
         out.innerHTML = "";
         console_input.value = "";
     } else if (console_input.value.toLowerCase().includes("echo ")) {
