@@ -1,0 +1,37 @@
+body {
+    background-color: black;
+
+    font-size: 15px;
+    color: yellow;
+    font-family: monospace;
+    margin-left: 10px;
+    margin-top: 10px;
+
+    transition: 10s;
+}
+
+.console-input {
+    width: 80%;
+    font-size: inherit;
+
+    border: none;
+    background: transparent;
+    font-family: monospace;
+    color: inherit;
+}
+
+#gh-link:hover {
+    color: black;
+    background: yellow;
+    transition: 0.5s;
+}
+
+#gh-link {
+    color: yellow;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.glitch-text {
+    mask-image: linear-gradient(to left, white, black);
+}

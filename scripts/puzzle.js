@@ -22,5 +22,5 @@ lock1.oninput = function() {
 answer1link.onclick = function () {
 	document.body.style.transition = "0.5s";
     document.body.style.opacity = "0";
-    window.location.href = "puzzle/1.html";
+    window.location.href = "puzzle/1/1.html";
 }

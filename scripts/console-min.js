@@ -46,7 +46,7 @@ function check_ready(ready_input, action) {
 
     } else if (action == "onchange") {
         if (ready_input.value.toLowerCase() == "yes") {
-            document.location.href = "2.html";
+            document.location.href = "../2/2.html";
         }
     }
 }

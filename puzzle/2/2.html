@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<p>
+    PULSAR OS [Version 10.19036612 beta 4]<br>
+    COPYRIGHT 2019 <a id="gh-link" href="https://github.com/shaunakg">@SHAUNAKG </a><br>
+    WARNING: OS CORRUPTION DETECTED RUNNING SAFE MODE FAILSAFE<br> 
+    FOR HELP TYPE 'HELP'<br>
+    <pre><div id="output"></div></pre><br>
+    <span id="currentcommandtext">root@pulsarconsole:~$ <input type="text" class="console-input" id="consoleinput01" onchange="process();" autofocus></span>
+</p>
+
+<script>
+
+const helptext =  "<br><br>[Warning: File '/system/local/static/help_guide.txt' checksum failed to verify]<br><br>PULSAROS HELP GUIDE<br>revision 3.04 open<br><br>Commands (simple):<br>HELP - opens this dialog<br>SSH - Remote connection<br><span class=\"glitch-text\">ECHO - Display texxxxxxxx~~~</span><br><br>[Unable to read]<br>";
+const lstext = "bin  boot  dev  etc  home  init  lib  lib64  media  mnt  opt  proc  root  run  sbin  snap  srv  sys  tmp  usr  var";
+const shutdown_log = `
+
+PULSAR OS SHUTDOWN LOG
+
+Shutdown time: [ERROR_CLOCK_NOT_INITIATED]
+Reason: User command
+
+Logging out user: SYS_TEMP_USR_L3NvbHZlZC5odG1s
+
+Halting all non-essential programs
+Halting all non-essential services
+Halting ~/system/bin/config/hlt.sh
+Unmounting ~/mnt/drive/c/records/2019/
+
+Halting drivers
+Halting coreutils
+Halting sysutils
+
+Running final drive scan...
+[15% done] : secure
+[35% done] : secure
+[55% done] : secure
+[85% done] : found corrupted sectors 0x1342b3 to 0x3234cf
+[100% done] : finished
+
+Shutdown complete at [ERROR_CLOCK_NOT_INITIATED];
+
+`;
+
+
+const console_input = document.getElementById("consoleinput01");
+const out = document.getElementById("output");
+const commandtext = document.getElementById("currentcommandtext");
+
+function output_generator(result) {
+    return "<br>" + commandtext.innerText + console_input.value + "<br>" + result + "<br>";
+}
+
+function process() {
+
+    if (console_input.value.toLowerCase().includes("help")) {
+        out.innerHTML += output_generator(helptext);
+        console_input.value = "";
+    } else if (console_input.value.toLowerCase().includes("ssh")) {
+        out.innerHTML += output_generator("Unable to establish connection.");
+        console_input.value = "";
+    } else if (console_input.value.toLowerCase().includes("cls")) {
+        out.innerHTML = "";
+        console_input.value = "";
+    } else if (console_input.value.toLowerCase().includes("echo ")) {
+        out.innerHTML += output_generator(console_input.value.replace("echo ",""));
+        console_input.value = "";
+    } else if (console_input.value.toLowerCase().includes("sudo") || console_input.value.toLowerCase().includes("su ")) {
+        out.innerHTML += output_generator("Unable to comply - you are not root");
+        console_input.value = "";
+    } else if (console_input.value.toLowerCase().includes("exit") || console_input.value.toLowerCase().includes("halt") || console_input.value.toLowerCase().includes("shutdown")) {
+        out.innerHTML = "";
+        out.innerHTML += output_generator(shutdown_log);
+        commandtext.style.display = "none";
+        document.body.style.color = "white";
+        document.body.style.backgroundColor = "white";
+    } else {
+        out.innerHTML += output_generator("Incorrect command.");
+        console_input.value = "";
+    }
+}
+
+</script>
