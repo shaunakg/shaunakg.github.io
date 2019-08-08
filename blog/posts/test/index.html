@@ -1,0 +1,149 @@
+<!doctype html>
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<link rel="stylesheet" href="stylesheet.css">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Caslon+Text|Montserrat|Red+Hat+Display&display=swap" rel="stylesheet"> 
+</head>
+
+<div class="scrolling-bar-wrapper" id="scroll_wrapper">
+	<div class="scrolling-bar-back" id="myBar"></div>
+	<div class="scrolling-done-msg" id="scroll_done_msg">
+
+		<b id="scroll_msg_bold">Finished reading? Share this on social media.</b><br>
+
+		<a href="" id="twitter_intent_top_link"><img class="social-btn" src="../../images/Twitter_Social_Icon_Circle_Color.png"></a>
+		<a onclick="alert('Instagram does not support prefill of posts, so this feature is disabled.');" id="instagram_intent_top_link"><img class="social-btn disabled" src="../../images/IG_Glyph_Fill_transparent.gif"></a>
+		<a href="" id="reddit_intent_top_link"><img class="social-btn" src="../../images/reddit_share_circle_96.png"></a>
+		<a href="" id="tumblr_intent_top_link"><img class="social-btn" src="../../images/Tumblr_Logos_2018.03.06_Android Icon Blue.png"></a>
+
+	</div>
+</div>
+
+<div class="article-wrapper" id="content_wrapper">
+
+<h1 id="article_title" class="article-title">Test Post</h1>
+<p class="article-author-credit">
+	By Example Author<br>
+	1899
+</p>
+
+<p id="article-content">
+Hello and welcome to my blog. This is simply a test post that isn't meant to be accessed by regular users, but now that you're here, enjoy the scenery and lay down for a while.
+
+The unanimous Declaration of the thirteen united States of America
+
+When in the Course of human events it becomes necessary for one people to dissolve the political bands which have connected them with another and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.
+
+We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness. — That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, — That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn that mankind are more disposed to suffer, while evils are sufferable than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security. — Such has been the patient sufferance of these Colonies; and such is now the necessity which constrains them to alter their former Systems of Government. The history of the present King of Great Britain is a history of repeated injuries and usurpations, all having in direct object the establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a candid world.
+
+He has refused his Assent to Laws, the most wholesome and necessary for the public good.
+
+He has forbidden his Governors to pass Laws of immediate and pressing importance, unless suspended in their operation till his Assent should be obtained; and when so suspended, he has utterly neglected to attend to them.
+
+He has refused to pass other Laws for the accommodation of large districts of people, unless those people would relinquish the right of Representation in the Legislature, a right inestimable to them and formidable to tyrants only.
+
+He has called together legislative bodies at places unusual, uncomfortable, and distant from the depository of their Public Records, for the sole purpose of fatiguing them into compliance with his measures.
+
+He has dissolved Representative Houses repeatedly, for opposing with manly firmness his invasions on the rights of the people.
+
+He has refused for a long time, after such dissolutions, to cause others to be elected, whereby the Legislative Powers, incapable of Annihilation, have returned to the People at large for their exercise; the State remaining in the mean time exposed to all the dangers of invasion from without, and convulsions within.
+
+He has endeavoured to prevent the population of these States; for that purpose obstructing the Laws for Naturalization of Foreigners; refusing to pass others to encourage their migrations hither, and raising the conditions of new Appropriations of Lands.
+
+He has obstructed the Administration of Justice by refusing his Assent to Laws for establishing Judiciary Powers.
+
+He has made Judges dependent on his Will alone for the tenure of their offices, and the amount and payment of their salaries.
+
+He has erected a multitude of New Offices, and sent hither swarms of Officers to harass our people and eat out their substance.
+
+He has kept among us, in times of peace, Standing Armies without the Consent of our legislatures.
+
+He has affected to render the Military independent of and superior to the Civil Power.
+
+He has combined with others to subject us to a jurisdiction foreign to our constitution, and unacknowledged by our laws; giving his Assent to their Acts of pretended Legislation:
+
+For quartering large bodies of armed troops among us:
+
+For protecting them, by a mock Trial from punishment for any Murders which they should commit on the Inhabitants of these States:
+
+For cutting off our Trade with all parts of the world:
+
+For imposing Taxes on us without our Consent:
+
+For depriving us in many cases, of the benefit of Trial by Jury:
+
+For transporting us beyond Seas to be tried for pretended offences:
+
+For abolishing the free System of English Laws in a neighbouring Province, establishing therein an Arbitrary government, and enlarging its Boundaries so as to render it at once an example and fit instrument for introducing the same absolute rule into these Colonies
+
+For taking away our Charters, abolishing our most valuable Laws and altering fundamentally the Forms of our Governments:
+
+For suspending our own Legislatures, and declaring themselves invested with power to legislate for us in all cases whatsoever.
+
+He has abdicated Government here, by declaring us out of his Protection and waging War against us.
+
+He has plundered our seas, ravaged our coasts, burnt our towns, and destroyed the lives of our people.
+
+Alright that should be enough sample text, see ya next time.
+</p>
+<br>
+
+<div class="social-nav-box" id="social_nav">
+	<!-- Social stuff goes here -->
+
+	<!-- page navigation stuff goes here -->
+	<span class="nav-box">
+		<a href="#prev" class="secondary-btn btn">Previous</a>
+		<a href="#next" class="action-btn btn">Next</a> 
+	</span>
+</div>
+</div>
+
+<br><br>
+
+<script>
+
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {scrollProgress()};
+
+const progress_background = document.getElementById("myBar");
+const progress_wrapper = document.getElementById("scroll_wrapper");
+const progress_end = document.getElementById("scroll_done_msg");
+const content_wrapper = document.getElementById("content_wrapper");
+
+var article_title = document.getElementById("article_title").innerText;
+
+const twitter_intent_top = document.getElementById("twitter_intent_top_link");
+const tumblr_intent_top = document.getElementById("tumblr_intent_top_link");
+
+twitter_intent_top.href = "https://twitter.com/intent/tweet?text=" + "Check out this new blog post!" + "&url=" + document.URL;
+tumblr_intent_top.href = "https://embed.tumblr.com/share/?posttype=link&title=" + article_title.replace(" ", "%20") + "&content=" + document.URL + "&caption=This%20is%20a%20great%20blog!";
+
+var winScroll, height, scrolled;
+
+function scrollProgress() {
+	winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+	height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+	scrolled = (winScroll / height) * 100;
+	progress_background.style.width = scrolled + "%";
+	progress_background.style.filter = "hue-rotate(" + (scrolled/100)*360+ "deg)";
+
+	if (scrolled == 100) {
+		progress_wrapper.style.height = "10em";
+		progress_end.style.userSelect = "inherit";
+		progress_end.style.display = "block";
+		progress_end.style.transitionDuration = "2s";
+		progress_end.style.opacity = 1;
+		progress_background.style.backgroundColor = "black";
+	} else {
+		progress_wrapper.style.height = "0.5em";
+		progress_end.style.userSelect = "none";
+		progress_background.style.backgroundColor = "orange";
+		progress_end.style.display = "none";
+		progress_end.style.opacity = 0;
+	}
+}
+
+</script>

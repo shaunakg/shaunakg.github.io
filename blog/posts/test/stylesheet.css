@@ -26,7 +26,7 @@ body {
     margin: 0;
     top: 0;
     z-index: 1;
-    height: 1em;
+    height: 0.5em;
     left: 0;
     width: 100%;
     text-align: center;
@@ -44,7 +44,13 @@ body {
 
     transition: 1s;
     opacity: 0;
+    display: none;
     user-select: none;
+}
+
+#scroll_msg_bold {
+    font-family: 'Red Hat Display', 'Montserrat', sans-serif;
+    color: white;
 }
 
 .article-wrapper {
@@ -124,6 +130,56 @@ body {
     transition: 0.25s;
 }
 
+.small-action-btn {
+    color: white;
+    background-color: rgb(25, 51, 77);
+    border: 2px solid rgb(25, 51, 77);
+    border-radius: 7px;
+    margin: 5px;
+
+    font-size: 1em;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    text-decoration: none;
+
+    transition: 0.25s;
+}
+
+.small-action-btn:hover{
+    background-color: rgb(0, 0, 0);
+    border: 2px solid black;
+    box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.75);
+
+    transition: 0.25s;
+}
+
+.small-secondary-btn {
+    color: black;
+    border: 2px solid #c2004b;
+    border-radius: 7px;
+    margin: 5px;
+
+    font-size: 1em;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    text-decoration: none;
+
+    transition: 0.25s;
+}
+
+.small-secondary-btn:hover {
+    background-color: rgb(255, 208, 208);
+    transition: 0.25s;
+}
+
 .disabled, .disabled:hover {
     opacity: 0.5;
     user-select: none;
@@ -143,7 +199,7 @@ body {
     margin: 10px;
     background: rgb(56, 56, 56);
     border-radius: 5px;
-    transition: 0.25s;
+    transition: 0.25s, transform 1s;
 
     height: 50px;
     width: 50px;
@@ -151,9 +207,10 @@ body {
 
 .social-btn:hover {
     background-color: transparent;
-    transition: 0.25s;
+    transition: 0.25s, transform 1s;
     width: 75px;
     height: 75px;
-    padding: 10px;
-    padding-top: 0;
+    padding: 7px;
+
+    transform: rotate(360deg);
 }
