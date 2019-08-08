@@ -13,7 +13,10 @@ function check_passphrase(pw_input, p_title, pw_wrapper, p_ready) {
 }
 
 function check_ready(ready_input, action) {
-    console.log("Sup");
+
+    document.body.onclick = function () {
+        ready_input.focus();
+    }
 
     if (action == "oninput") {
         var ready1 = document.getElementById("ready1");
