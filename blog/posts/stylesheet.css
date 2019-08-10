@@ -9,6 +9,7 @@ font-family: 'Montserrat', sans-serif;
 body {
     margin: 10px;
     margin-bottom: 20px;
+    background: white;
 }
 
 .scrolling-bar-back, #myBar {
@@ -55,11 +56,16 @@ body {
 
 .article-wrapper {
     font-family: 'Libre Caslon Text', serif;
-    max-width: 50%;
+    max-width: 100%;
     position: absolute;
     text-align: justify;
-    left: 24%;
-    line-height: calc(1em + 10px);
+    left: 20%;
+    right: 20%;
+    line-height: 2;
+    background-color: #FAFAFA;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 145px -21px rgba(0,0,0,0.75);
 }
 
 .article-title {

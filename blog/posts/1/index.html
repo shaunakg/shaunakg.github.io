@@ -1,0 +1,96 @@
+<!doctype html>
+
+<head>
+	<title>Test Blog Post - 01/01/1899</title>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+
+	<link rel="stylesheet" href="../stylesheet.css">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Caslon+Text|Montserrat|Red+Hat+Display&display=swap" rel="stylesheet"> 
+</head>
+
+<div class="scrolling-bar-wrapper" id="scroll_wrapper">
+	<div class="scrolling-bar-back" id="myBar"></div>
+	<div class="scrolling-done-msg" id="scroll_done_msg">
+
+		<b id="scroll_msg_bold">Finished reading? Share this on social media.</b><br>
+
+		<a href="" id="twitter_intent_top_link"><img alt="Twitter share button." class="social-btn" src="../../images/Twitter_Social_Icon_Circle_Color.png"></a>
+		<a onclick="alert('Instagram does not support prefill of posts, so this feature is disabled.');" id="instagram_intent_top_link"><img alt="The instagram share button does not work." class="social-btn disabled" src="../../images/IG_Glyph_Fill_transparent.gif"></a>
+		<a href="" id="reddit_intent_top_link"><img alt="Reddit share button." class="social-btn" src="../../images/reddit_share_circle_96.png"></a>
+		<a href="" id="tumblr_intent_top_link"><img alt="Tumblr share button." class="social-btn" src="../../images/Tumblr_Logos_2018.03.06_Android Icon Blue.png"></a>
+
+	</div>
+</div>
+
+<div class="article-wrapper" id="content_wrapper">
+
+<h1 id="article_title" class="article-title">Test Post</h1>
+<p class="article-author-credit">
+	By Example Author<br>
+	1899
+</p>
+
+<p id="article-content">
+Hi and welcome to my blog. It isn't perfect, the animations are slow and I haven't fully optimised off-device loading. And yes, this does look a bit like Medium. But as a developer, I wanted to develop this blog, and in this post, I'll share how I made it (it is a bit mundane but I can't think of anything right now).<br>
+<br>
+Firstly you may be thinking how I post. Well, I have a sophisticated system in place that involves an interest series of interactions with both the webpage an a cloud API- no just kidding, I edit the actual webpage itself to make new posts. Seriously. I'm making this post in VSCode right now. I know there should be a better way, I just cannot find it. To store my posts somewhere dynamic, I'd have to have a PHP server of something like that which I currently cannot find.
+</p>
+<br>
+
+<div class="social-nav-box" id="social_nav">
+	<!-- Social stuff goes here -->
+
+	<!-- page navigation stuff goes here -->
+	<span class="nav-box">
+		<a href="#prev" class="secondary-btn btn">Previous</a>
+		<a href="#next" class="action-btn btn">Next</a> 
+	</span>
+</div>
+</div>
+
+<br><br>
+
+<script>
+
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {scrollProgress()};
+
+const progress_background = document.getElementById("myBar");
+const progress_wrapper = document.getElementById("scroll_wrapper");
+const progress_end = document.getElementById("scroll_done_msg");
+const content_wrapper = document.getElementById("content_wrapper");
+
+var article_title = document.getElementById("article_title").innerText;
+
+const twitter_intent_top = document.getElementById("twitter_intent_top_link");
+const tumblr_intent_top = document.getElementById("tumblr_intent_top_link");
+
+twitter_intent_top.href = "https://twitter.com/intent/tweet?text=" + "Check out this new blog post!" + "&url=" + document.URL;
+tumblr_intent_top.href = "https://embed.tumblr.com/share/?posttype=link&title=" + article_title.replace(" ", "%20") + "&content=" + document.URL + "&caption=This%20is%20a%20great%20blog!";
+
+var winScroll, height, scrolled;
+
+function scrollProgress() {
+	winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+	height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+	scrolled = (winScroll / height) * 100;
+	progress_background.style.width = scrolled + "%";
+	progress_background.style.filter = "hue-rotate(" + (scrolled/100)*360+ "deg)";
+
+	if (scrolled == 100) {
+		progress_wrapper.style.height = "10em";
+		progress_end.style.userSelect = "inherit";
+		progress_end.style.display = "block";
+		progress_end.style.transitionDuration = "2s";
+		progress_end.style.opacity = 1;
+		progress_background.style.backgroundColor = "black";
+	} else {
+		progress_wrapper.style.height = "0.5em";
+		progress_end.style.userSelect = "none";
+		progress_background.style.backgroundColor = "orange";
+		progress_end.style.display = "none";
+		progress_end.style.opacity = 0;
+	}
+}
+
+</script>
