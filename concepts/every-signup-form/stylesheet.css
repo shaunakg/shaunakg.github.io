@@ -4,10 +4,25 @@ body {
     overflow: hidden;
 }
 
+.credit-small-footer {
+    margin: 0;
+    position: fixed;
+    bottom: 2%;
+    right: 1%;
+    z-index: 999;
+    color: black;
+    font-family: 'Playfair Display', serif;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 65px 4px rgba(0,0,0,0.75);
+    padding: 10px;
+    max-width: 10%;
+}
+
 .signup-modal {
     position: fixed;
     background-color: #FAFAFA;
-    z-index: 999;
+    z-index: 100;
 
     line-height: 1.3;
 
