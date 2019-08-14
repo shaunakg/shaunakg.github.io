@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Welcome to SCP Co!</title>
+	<link rel="stylesheet" href="stylesheet.css">
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Playfair+Display&display=swap" rel="stylesheet"> 
+</head>
+
+<span class="background-organic-shapes-wrapper">
+	<img class="organic-floater" id="organic-floater-1" width="35%" src="../blobs/blob1.svg">
+	<img class="organic-floater" id="organic-floater-2" width="15%" src="../blobs/blob2.svg">
+	<img class="organic-floater" id="organic-floater-3" width="30%" src="../blobs/blob3.svg">
+	<img class="organic-floater" id="organic-floater-4" width="40%" src="../blobs/blob4.svg">
+	<img class="organic-floater" id="organic-floater-5" width="25%" src="../blobs/blob5.svg">
+</span>
+
+<div class="process-modal">
+	<textarea disabled cols="70" rows="40" id="status"></textarea>
+</div>
+
+<script>
+
+var messages = [
+	"Processing user input from signup form...",
+	"Checking against previously recorded values...",
+	"[Input is unique]",
+	"Contacting database... [NO RESPONSE]",
+	"Database is down, contacting database admin [NO RESPONSE, RANG FOR 35 SECONDS]",
+	"Database admin's phone is switched off, contacting telecom company [PUT ON HOLD, APPROX 27 HRS TILL CONNECTION]",
+	"Finding database admin's address...",
+	"	Checking employee records... [DATABASE ERROR]",
+	"	Searching Google... [ADDRESS NOT FOUND]",
+	"	Searching DuckDuckGo... [ADDRESS NOT FOUND]",
+	"	Searching Bing... [ADDRESS NOT FOUND]",
+	"	Searching Yahoo! Answers [1 RESULT!]",
+	"Found employee:",
+	"	[NAME] James Green",
+	"	[ADDRESS] 27 Acacia Row, Wheelsville CA 20001",
+	"	[WORKS FOR] SCP Co.",
+	"	[STATUS] Unwell",
+	"	[PERSONAL] 1 wife, 2 kids",
+	"Solution found!",
+	"Calling Green Family daycare... [TARGET LOCATION CONFIRMED]",
+	"Sending field agents... [ORDERS RECIEVED]",
+	"Field agent status..... [VISUAL SIGHTING]",
+	"Field agent status..... [CHILDREN ACQUIRED]",
+	"Sending note to Mr. Green [SENT]",
+	"	To Mr. Green,",
+	"	We have your kids, if you ever want to see them again,",
+	"	make sure you fix the SCP Co. database.",
+	"	",
+	"	Have a nice day!",
+	"Compliance confirmed...",
+	"Database being fixed...",
+	"	[000%]",
+	"	[025%]",
+	"	[050%]",
+	"	[075%]",
+	"	[100%]",
+	"Database fixed.",
+	"Sending query... [OK]",
+	"",
+	"Database updated!"
+];
+
+// for (i=0; i<=messages.length; i++) {
+// 	setTimeout(printFromMessages, 250, i);
+// }
+
+var i = 0;
+
+setInterval(function () {
+	if (i<42) {
+		document.getElementById("status").value += messages[i] + "\n";
+		i++;
+	} else {
+		clearInterval();
+	}
+}, 500);
+
+// function printFromMessages(i) {
+// 	document.getElementById("status") += messages[i] + "<br>";
+// }
+
+</script>
