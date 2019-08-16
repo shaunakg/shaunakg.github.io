@@ -17,6 +17,9 @@ body {
     box-shadow: 10px 10px 65px 4px rgba(0,0,0,0.75);
     padding: 10px;
     max-width: 10%;
+
+    user-select: none;
+    cursor: default;
 }
 
 .signup-modal {
