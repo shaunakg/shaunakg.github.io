@@ -12,6 +12,17 @@ body {
     display:flex;
 }
 
+.pop-line {
+
+    position: absolute;
+    height: 0.5%;
+    min-width: 100%;
+    background: linear-gradient(to right, red,orange);
+    
+    top: 0;
+
+}
+
 .intro {
     top: 0;
     background: url("images/bg-cropped.png") no-repeat center center fixed;
@@ -111,7 +122,7 @@ body {
 
 .portfolio-card {
 
-    margin: 30px;
+    margin: 5vh 5vw 5vh 5vw; 
 
     z-index: 30;
 
