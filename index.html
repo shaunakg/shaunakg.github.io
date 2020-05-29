@@ -44,7 +44,7 @@
     <div class="colsec">
 
         <div id="hellotext" class="text">
-            <h1 onclick="typeIt(this, 30, cmsg[mi % cmsg.length]);mi++" id="hello">Hi! I'm Shaunak Gadkari.</h1>
+            <h1 onclick="typeIt(this,30,cmsg[mi%cmsg.length]);mi++;this.dataset.next=cmsg[mi%cmsg.length]" id="hello">Hi! I'm Shaunak Gadkari.</h1>
             <p id="description"><a href="mailto:me@shaunak.io">Contact me</a> or scroll to find out more.</p>
         </div>
 
@@ -64,7 +64,7 @@
         <a class="cell light text-dark" href="//covid-anonymous.herokuapp.com">
             <div class="description">
                 <p>
-                    <p>An webapp that allows COVID-19 diagnosees to anonymously notify their families of their status.</p>
+                    <p>A webapp that allows COVID-19 diagnosees to anonymously notify their families of their status.</p>
                 </p>
             </div> 
             <img class="table-img" src="images/project-icons/covan.webp">
