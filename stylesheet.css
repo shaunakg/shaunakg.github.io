@@ -2,6 +2,7 @@
 :root {
 
     --num-cells-per-row: 5;
+    --table-cell-width: calc((93vw/var(--num-cells-per-row)) - 1px);
 
 }
 
@@ -87,24 +88,6 @@ a:hover {text-decoration: none;}
 
 }
 
-.page#pg1::after {
-    content: "▲ INTRO ▲";
-    font-size: 0.75em;
-    color: white;
-    font-family: 'consolas', monospace;
-    position: absolute;
-    bottom: 0;
-}
-
-.page#pg2::before {
-    content: "▼ PROJECTS ▼";
-    font-size: 0.75em;
-    color: white;
-    font-family: 'consolas', monospace;
-    position: absolute;
-    bottom: -1.75em;
-}
-
 .page .colsec {
 
     align-self: center;
@@ -131,14 +114,34 @@ a:hover {text-decoration: none;}
     padding: 0;
     align-items: flex-start;
     justify-content: flex-start;
+    flex-flow: row wrap;
 }
 
 .page .colsec.table .cell {
-    max-width: calc(93vw/var(--num-cells-per-row));
-    max-height: calc(93vw/var(--num-cells-per-row));
+    min-width: var(--table-cell-width); max-width: var(--table-cell-width);
+    min-height: var(--table-cell-width); max-height: var(--table-cell-width);
     filter: brightness(1);
-    
-    background-color: darkslategray;
+
+    align-self: flex-start;
+    margin: 0;
+
+    border: 1px solid black;
+    border-top: 0;
+    border-left: none;
+}
+
+.page .colsec.table .cell.dark {background-color: darkslategray; color: white;}
+.page .colsec.table .cell.light {background-color: deepskyblue; color: white;}
+
+.page .colsec.table .cell.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: coral;
+}
+
+.page .colsec.table .cell.title p {
+    align-self: center;
 }
 
 .page .colsec.table .cell .description {
@@ -165,17 +168,20 @@ a:hover {text-decoration: none;}
     transition: 0.5s;
 }
 
-.page .colsec.table .cell .description:hover {
-    background-color: rgba(0, 0, 0, 0.25);
-}
+.page .colsec.table .cell.light .description:hover {background-color: rgba(0, 0, 0, 0.55);}
+.page .colsec.table .cell.dark .description:hover {background-color: rgba(0, 0, 0, 0.25);}
 
 .page .colsec.table .cell .description:hover p {
     opacity: 1;
 }
 
 
-.page .colsec.table .cell .table-img {width: calc(93vw/var(--num-cells-per-row)); height: calc(93vw/var(--num-cells-per-row));}
+.page .colsec.table .cell .table-img {
+    width: var(--table-cell-width);
+    height: var(--table-cell-width);
+}
 .page .colsec:hover {background-color: rgba(71, 61, 139, 0.37);}
+.page#pg2 .colsec:hover {background-color: rgba(0, 0, 0, 0.37);}
 
 .page .colsec .text {
 
