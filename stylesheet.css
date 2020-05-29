@@ -206,4 +206,8 @@ a:hover {text-decoration: none;}
         font-size: 0.5em;
     }
 
+    .page .colsec.table .cell.title p {
+        font-size: 1em;
+    }
+
 }
