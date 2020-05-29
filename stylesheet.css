@@ -1,223 +1,201 @@
 
+:root {
+
+    --num-cells-per-row: 5;
+
+}
+
 body {
     margin: 0;
+    padding: 0;
     overflow-x: hidden;
-    font-family: 'Noto Serif', serif;
-    line-height: 1.5;
+    background-color: white;
+    font-size: 1.5em;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+    color: #ffff00;
+}
+
+a:hover {text-decoration: none;}
+
+.popbar {
+    position: sticky;
+    display: block;
+    z-index: 100;
+    top: 0;
+    width: 100vw;
+    height: 5px;
+    background: linear-gradient(to left, orange, red);
+}
+
+.currently-typing::after {
+    content: "_";
+    animation: blink 0.530s infinite linear;
+    margin-left: -10px;
+}
+
+.finished-typing::after {
+    content: "_";
+    animation: rainbow-spin 3s infinite linear;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes rainbow-spin {
+    0% {
+        color: red;
+    }
+
+    20% {
+        color: orange;
+    }
+
+    60% {
+        color: darkslateblue
+    }
+
+    80% {
+        color: black;
+    }
+
+    100% {
+        color: red;
+    }
 }
 
 .page {
-    position: absolute;
-    width: 100%;
-    display:flex;
-}
-
-.pop-line {
-
-    position: absolute;
-    height: fit-content;
-    min-height: 0.5%;
-    min-width: 100%;
-    background: linear-gradient(to right, red,orange);
     
-    top: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
 
-}
-
-.pop-line p {
-
-    text-align: center;
-    color: white;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-}
-
-.intro {
-    top: 0;
-    background: url("images/bg-cropped.png") no-repeat center center fixed;
-    height: 100%;
-    background-size: cover;
-    justify-content:center;
-    align-items:center;
-}
-
-.intro .title-intro {
-    text-align: center;
-    transition: 0.75s;
-}
-
-.intro .title-intro h1 {
-
-    position: relative;
-
-    font-family: 'Noto Serif', serif;
-    font-weight: bold;
-    background-color: #FFFD98;
-    color: black;
-    padding: 10px 20px 10px 20px;
-
-    animation: name-animation 0.75s;
-    animation-fill-mode: forwards;
-
-    z-index: 99;
-
-}
-
-.intro .title-intro h2 {
-
-    position: relative;
-
-    margin-top: -3.5em;
-    padding: 10px 20px 10px 20px;
-    background-color: #23395B;
-    transform: rotate(0deg);
-    color: white;
-
-    animation: msg-animation 0.75s;
-    animation-fill-mode: forwards;
+    display: flex;
+    justify-content: center;
+    align-self: center;
 
     z-index: 0;
+
 }
 
-@keyframes name-animation {
-    100% {transform: rotate(8deg)}
-}
-
-@keyframes msg-animation {
-    100% {transform: rotate(-4deg); margin-top: 1.5em}
-}
-
-.go-down {
-
+.page#pg1::after {
+    content: "▲ INTRO ▲";
+    font-size: 0.75em;
+    color: white;
+    font-family: 'consolas', monospace;
     position: absolute;
-    bottom: 5%;
+    bottom: 0;
+}
 
-    cursor: pointer;
-    
-    text-transform: lowercase;
-    text-decoration: none;
-    letter-spacing: 1.2;
+.page#pg2::before {
+    content: "▼ PROJECTS ▼";
+    font-size: 0.75em;
     color: white;
-
-    font-family: monospace;
-
+    font-family: 'consolas', monospace;
+    position: absolute;
+    bottom: -1.75em;
 }
 
-.go-down .material-icons {
+.page .colsec {
 
-    animation: updown 1s infinite;
-}
+    align-self: center;
 
-@keyframes updown {
+    background-color: transparent;
+    color: white;
+    border: 5px solid yellow;
+    font-family: 'consolas', monospace;
+    height: 90vh;
+    width: 93vw;
 
-    0% {transform: translateY(0%)}
-    50% {transform: translateY(50%);}
-    100% {transform: translateY(0%);}
-
-}
-
-.portfolio {
-
-    top: 100vh;
-    height: auto;
-    max-height: 500vh;
-
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: flex;
     justify-content: space-between;
+
+    align-items: center;
+
+    z-index: 10;
+
+    transition: 0.5s;
+
+}
+
+.page .colsec.table {
+    padding: 0;
     align-items: flex-start;
-
+    justify-content: flex-start;
 }
 
-.portfolio-card {
-
-    margin: 5vh 5vw 5vh 5vw; 
-
-    z-index: 30;
-
-    flex-grow: 1;
+.page .colsec.table .cell {
+    max-width: calc(93vw/var(--num-cells-per-row));
+    max-height: calc(93vw/var(--num-cells-per-row));
+    filter: brightness(1);
     
-    background-color: #B9E3C6;
-    border-radius: 20px;
-    padding: 20px;
+    background-color: darkslategray;
+}
 
-    box-shadow: 10px 10px 52px -16px rgba(0,0,0,0.75);
+.page .colsec.table .cell .description {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    transition: 0.5s;
+
+    justify-content: center;
+    align-items: center;
 
 }
 
-.portfolio-card img {
-    float: right;
-    border-radius: 20px;
-
-    object-fit: cover;
-    max-height: 20em;
-}
-
-.portfolio-card.special {
-    background-color: #59C9A5;
-}
-
-.social-link {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 2px solid red;
-
-    transition: 0.15s;
-}
-
-.social-link:hover {
-    border-bottom: 4px solid red;
-}
-
-.material-btn {
-
-    display: inline-block;
-
+.page .colsec.table .cell .description p {
+    display: block;
+    z-index: 99;
+    opacity: 0;
     padding: 10px;
-    background: #D81E5B;
-    border-radius: 5px;
-    color: white;
-    text-decoration: none;
-
-    margin-left: 10px;
-    margin-bottom: 20px;
-
-    transition: 0.25s;
+    transition: 0.5s;
 }
 
-.material-btn:first-of-type {
-    margin-left: 0;
+.page .colsec.table .cell .description:hover {
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
-.material-btn:hover {
-
-    box-shadow: 10px 10px 52px -16px rgba(0,0,0,0.50);
-    transform: translateY(-3px);
+.page .colsec.table .cell .description:hover p {
+    opacity: 1;
 }
 
-@media screen and (max-width: 950px) {
 
-    .portfolio {
-        max-height: fit-content;
+.page .colsec.table .cell .table-img {width: calc(93vw/var(--num-cells-per-row)); height: calc(93vw/var(--num-cells-per-row));}
+.page .colsec:hover {background-color: rgba(71, 61, 139, 0.37);}
+
+.page .colsec .text {
+
+    padding: 20px;
+    margin: 20px;
+    border-left: 10px solid rgb(202, 202, 202);
+
+    align-self: center;
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    :root {
+        --num-cells-per-row: 2;
     }
 
-    .portfolio-card {
-        width: 90%;
-        overflow-x: scroll;
-    }
-
-    .portfolio-card img {
-        display: none;
-    }
-
-    .material-btn {
-        display: inline-block;
-        padding: 5px;
-    }
-
-    .material-btn::after {
-        content: "\A";
-        white-space: pre;
+    .page .colsec.table .cell .description p {
+        padding: 2px;
+        font-size: 0.5em;
     }
 
 }
