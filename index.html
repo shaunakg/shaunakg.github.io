@@ -1,7 +1,14 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+
 <head>
 
     <title>home // sg</title>
+
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SG's main page - home">
 
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -52,13 +59,13 @@
     </div>
 
     <footer>
-        This site includes no tracking scripts or elements. <span id=size></span>
+        This site includes no tracking scripts or elements. <!-- <span id=size></span> -->
     </footer>
 
     <script>
 
         fetch('https://api.github.com/repos/shaunakg/shaunakg.github.io').then(r => r.json()).then(j => {
-            document.getElementById("size").innerText = `The entire page (non-compressed) is ${j.size/1e3} Kb.`;
+            // document.getElementById("size").innerText = `The entire page (non-compressed) is ${j.size/1e3} Kb.`;
             console.table({
                 repoSize: j.size,
                 htmlSize: document.head.innerHTML.length + document.body.innerHTML.length,
@@ -69,3 +76,5 @@
     </script>
 
 </body>
+
+</html>
