@@ -30,6 +30,10 @@
             <!-- <h1>Welcome to my site.</h1> -->
             <h2>Projects</h2>
             <ul>
+                
+                <li>
+                    <a href="//sixtysecondshell.srg.id.au"</a>SixtySecondShell - sixty seconds of many programming languages</a>
+                </li>
 
                 <li>
                     <a href="//c2n.srg.id.au">Canvas to Notion Integration</a>
@@ -78,7 +82,7 @@
     <script>
 
         fetch('https://api.github.com/repos/shaunakg/shaunakg.github.io').then(r => r.json()).then(j => {
-            // document.getElementById("size").innerText = `The entire page (non-compressed) is ${j.size/1e3} Kb.`;
+            document.getElementById("size").innerText = `The entire page (non-compressed) is ${j.size/1e3} Kb.`;
             console.table({
                 repoSize: j.size,
                 htmlSize: document.head.innerHTML.length + document.body.innerHTML.length,
