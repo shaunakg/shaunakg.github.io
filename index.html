@@ -15,8 +15,6 @@
     <link rel=icon href=icon-192.png />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <script data-ad-client="ca-pub-8041060354687523" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
 </head>
 
 <body>
@@ -27,70 +25,25 @@
 
             <img alt="srg.codes logo - consisting of coloured bars with an S in front." class="logo" src="icon-192.png">
 
-            <!-- <h1>Welcome to my site.</h1> -->
-            <h2>Projects</h2>
-            <ul>
-                
-                <li>
-                    <a href="//sixtysecondshell.srg.id.au"</a>SixtySecondShell - sixty seconds of many programming languages</a>
-                </li>
+            <div class="links">
 
-                <li>
-                    <a href="//c2n.srg.id.au">Canvas to Notion Integration</a>
-                </li>
+                <a href="https://shaunakg.notion.site/shaunakg/131ea6d1959248c1b36973f3892fb4aa">
+                    <h2>Projects</h2>
+                </a>
 
-                <li>
-                    <a href="//studyboard.srg.codes">Studyboard - an aesthetic board for students.</a>
-                </li>
+                <a href="https://github.com/shaunakg">
+                    <h2>Github</h2>
+                </a>
 
+                <a href="mailto:hi@srg.id.au">
+                    <h2>Email</h2>
+                </a>
 
-                <!-- <li>
-                    <a href="//helpme.srg.codes">HelpMe - Computer help for the public</a>
-                </li> -->
-
-                <li>
-                    <a href="//covid-anonymous.herokuapp.com">COVID-19 Anonymous Disclousure/Notification</a>
-                </li>
-
-                <li>
-                    <a href="https://github.com/shaunakg/gforms-short-linking">Google Forms short-link service</a>
-                </li>
-
-            </ul>
-
-            <h2>Contact</h2>
-            <ul>
-
-                <li>
-                    <a href="mailto:me@srg.codes">Email &#128231;</a>
-                </li>
-                
-                <li>
-                    <a href="https://github.com/shaunakg">Github</a>
-                </li>
-
-<!--                 <li>
-                    <a href="//helpme.srg.codes">Public computer help (also see above)</a>
-                </li> -->
-
-            </ul>
+            </div>
 
         </div>
 
     </div>
-
-    <script>
-
-        fetch('https://api.github.com/repos/shaunakg/shaunakg.github.io').then(r => r.json()).then(j => {
-            document.getElementById("size").innerText = `The entire page (non-compressed) is ${j.size/1e3} Kb.`;
-            console.table({
-                repoSize: j.size,
-                htmlSize: document.head.innerHTML.length + document.body.innerHTML.length,
-                compressionRatio: (document.head.innerHTML.length + document.body.innerHTML.length)/j.size * 100
-            })
-        });
-
-    </script>
 
 </body>
 

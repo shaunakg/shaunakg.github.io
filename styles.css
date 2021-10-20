@@ -57,30 +57,24 @@ div.wrapper {
     margin: 0; padding: 0;
 }
 
-@keyframes spin {
-
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-
-}
-
 img.logo {
     height: 70px;
     display: block;
+    transition: 0.2s;
 }
 
-img.logo:hover {
-    animation: spin 1s;
+img.logo:active {
+    transform: scale(0.9);
 }
 
 div.container {
     max-width: 500px;
     margin: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
 }
 
 footer {
@@ -99,4 +93,18 @@ footer {
 
     color: white;
 
+}
+
+div.links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    justify-items: center;
+
+    margin-top: 1.5em;
+}
+
+div.links * {
+    text-align: center;
+    margin: 0; padding: 0;
 }
