@@ -172,6 +172,33 @@
 
     </div>
 
+    <hr>
+
+    <h2>🌟 Bonus section: Automating this process, forever</h2>
+
+    <p>
+        You can use an external service to ping your server every minute or so in order to keep it up to date.
+        In this section, we'll guide you on how to do just that.
+    </p>
+
+    <p>
+        First, you'll need to create an account on <a href="https://console.cron-job.org/jobs/create">cron-job.org</a>. Once you've done that, you'll see a console.
+        Click 'Create cronjob' on the right of the page.
+    </p>
+
+    <p>
+        You can name the job whatever you'd like. For the URL, type in <code id="cronurl">https://[YOUR REPLIT SERVER URL]/fetch</code>.
+        That is, the server URL that you'd paste in the input box above, appended with <code>/fetch</code>.
+    </p>
+
+    <p>
+        Set the frequency to every 1 minute, then, click 'Create'.
+    </p>
+
+    <p>
+        All done! You can check if it works by using your reading list normally and checking if it updates.
+    </p>
+
 </dt-article>
 
 <script>
@@ -186,6 +213,7 @@
     if (localStorage.getItem("readinglist-url")) {
         document.getElementById("repl-link").href = localStorage.getItem("readinglist-url") + "/__repl";
         document.getElementById("returning").style.display = "block";
+        document.getElementById("cronurl").innerHTML = localStorage.getItem("readinglist-url") + "/fetch";
     }
 
     document.getElementById("go").onclick = () => {
