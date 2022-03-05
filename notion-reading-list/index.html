@@ -129,6 +129,10 @@
 
     <h2 id="bk">Part IV: Activating the program</h2>
 
+    <p>
+        Once you paste in the server URL and press 'Go', any page you create in the database that <b>ends with a semicolon</b> will have metadata fetched for it.
+    </p>
+
     <div class="l-middle-outset widget">
             
         <div id="inputs">
@@ -149,6 +153,8 @@
 
 <script>
 
+    document.getElementById("url").value = localStorage.getItem("readinglist-url") || "";
+
     document.getElementById("go").onclick = () => {
 
         document.getElementById("inputs").style.display = "none";
@@ -160,6 +166,7 @@
         const errorN = document.getElementById("error-n");
 
         const url = document.getElementById("url").value;
+        localStorage.setItem("readinglist-url", url);
 
         check_n = 0;
         error_n = 0;
