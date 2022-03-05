@@ -20,6 +20,19 @@
             }
         } */
 
+        *:target {
+            text-decoration: underline;
+            text-decoration-color: hotpink;
+        }
+
+        p#returning {
+            display: none;
+            color: hotpink;
+            padding: 1.5em;
+            border: 2px solid #EEE;
+            border-radius: 5px;
+        }
+
     </style>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -50,6 +63,12 @@
     <dt-byline></dt-byline>
 
     <hr>
+
+    <p class="l-middle-outset" id="returning">
+        It looks like you've used this guide before. We've pre-populated the input field with your previous entry.
+        <a href="#bk">Click here</a> to skip to the interactive part of this guide. 
+        Or, <a href="#" id="clearLocalStorage">click here</a> to erase stored settings.
+    </p>
 
     <p>
         Notion is one of the best places for organizing and storing your data. But when it comes to actually
@@ -105,7 +124,7 @@
     </p>
 
     <p>
-        Head over to the <a href="https://replit.com/@artemis1102/notion-reading-list#index.js" target="_blank">Repl.it page</a> for the reading list and click "Fork this repl".
+        Head over to the <a id="repl-link" href="https://replit.com/github/shaunakg/notion-reading-list" target="_blank">Repl.it page</a> for the reading list.
         Then, if needed, sign up or log in the Replit. You should eventually arrive at a page like the below.
     </p>
 
@@ -158,6 +177,16 @@
 <script>
 
     document.getElementById("url").value = localStorage.getItem("readinglist-url") || "";
+
+    document.getElementById("clearLocalStorage").onclick = function() {
+        localStorage.clear();
+        location.reload();
+    }
+
+    if (localStorage.getItem("readinglist-url")) {
+        document.getElementById("repl-link").href = localStorage.getItem("readinglist-url") + "/__repl";
+        document.getElementById("returning").style.display = "block";
+    }
 
     document.getElementById("go").onclick = () => {
 
